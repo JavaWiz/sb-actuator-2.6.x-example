@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: sb-actuator-2.6.x-example-app
+
+# To expose Spring Boot info actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info
+  info:
+    enabled: true
+    env:
+      enabled: true
+
+info:
+  application:
+    name: ${spring.application.name}
+    description: Spring Boot Actuator Application
+    version: '@project.version@'
+    spring-cloud-version: '@spring-cloud.version@'
+    spring-boot-version: '@project.parent.version@'
